@@ -1,154 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Absoc Mental Health</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - Absoc Mental Health</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+  <style>
+    /* Carousel Styles */
+    .carousel-container {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      width: max-content;
+      animation: scrollCarousel 30s linear infinite;
+    }
+    .carousel-slide {
+      min-width: 300px;
+      margin-right: 1rem;
+    }
+    .carousel-slide img {
+      max-height: 200px;
+      width: auto;
+      border-radius: 10px;
+    }
+    @keyframes scrollCarousel {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
 </head>
 <body>
+  <div id="daily-reminder-bar" style="background: #e0f7fa; color: #0d4a57; text-align: center; padding: 0.5rem 1rem; font-weight: bold; font-family: 'Inter', sans-serif; position: sticky; top: 0; z-index: 999;">
+    🌟 Daily Reminder: <span id="quote-bar-text">Loading...</span>
+  </div>
+  <script>
+    fetch("https://api.quotable.io/random")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("quote-bar-text").textContent = data.content + " — " + data.author;
+      })
+      .catch(() => {
+        document.getElementById("quote-bar-text").textContent = "Take care of your mind. It's a part of your deen.";
+      });
+  </script>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-          <a href="index.html" class="logo-link">
-            <img src="Media/AMH LOGO.png" alt="Absoc Mental Health Logo" class="nav-logo">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo-link">
+        <img src="Media/AMH LOGO.png" alt="Absoc Mental Health Logo" class="nav-logo" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-item onpage">Home</a></li>
+        <li><a href="about.html" class="nav-item">About</a></li>
+        <li><a href="donate.html" class="nav-item">Donate</a></li>
+        <li><a href="blog.html" class="nav-item">Blog</a></li>
+        <li><a href="contact.html" class="nav-item">Contact</a></li>
+        <li>
+          <a href="https://www.instagram.com/absocmentalhealth/" target="_blank" class="nav-item" title="Instagram">
+            <i class="fab fa-instagram"></i>
           </a>
-          <ul class="nav-links">
-            <li><a href="index.html" class="nav-item onpage">Home</a></li>
-            <li><a href="about.html" class="nav-item">About</a></li>
-            <li><a href="donate.html" class="nav-item">Donate</a></li>
-            <li><a href="blog.html" class="nav-item">Blog</a></li>
-            <li><a href="contact.html" class="nav-item">Contact</a></li>
-            <li>
-                <a href="https://www.instagram.com/absocmentalhealth/" target="_blank" class="nav-item" title="Instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-              </li>                            
-              </a>
-            </li>
-            <li><a href="blogUpload.html" class="nav-item">Admin</a></li>
-          </ul>
-        </div>
-      </nav>
-      
-
-
-    <!-- Hero Section -->
-   <header class="hero">
-    <div class="hero-overlay">
-        <div class="hero-content">
-            <h1>Absoc Mental Health</h1>
-            <p>We are here to support your mental well-being, providing culturally-sensitive resources and peer support.</p>
-            <div class="hero-buttons">
-                <a href="donate.html" class="cta-button">Donate Now</a>
-                <a href="contact.html" class="cta-button-alt">Get Involved</a>
-            </div>
-        </div>
+        </li>
+        <li><a href="blogUpload.html" class="nav-item">Admin</a></li>
+      </ul>
     </div>
-</header>
-
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2>Who We Are</h2>
-            <p>Absoc Mental Health is a youth-led initiative dedicated to empowering the Muslim community through culturally-sensitive mental health resources.</p>
+  </nav>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Absoc Mental Health</h1>
+        <p>We are here to support your mental well-being, providing culturally-sensitive and religiously-sensitive based on Islamic teachings resources and peer support.</p>
+        <div class="hero-buttons">
+          <a href="donate.html" class="cta-button">Donate Now</a>
+          <a href="contact.html" class="cta-button-alt">Get Involved</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </header>
 
-    <!-- Services Section -->
-    <section id="services" class="section">
-        <div class="container">
-            <h2>What We Offer</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Workshops</h3>
-                    <p>Interactive sessions on mental well-being, mindfulness, and stress relief.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Peer Support</h3>
-                    <p>A safe space to talk and receive support from trained community members.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Resources</h3>
-                    <p>Access Islamic and general mental health guides, articles, and videos.</p>
-                </div>
-            </div>
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>Who We Are</h2>
+      <p>Absoc Mental Health is a youth-led initiative dedicated to empowering the Muslim community through culturally-sensitive and religiously-sensitive based on Islamic teachings mental health resources.</p>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>What We Offer</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Workshops</h3>
+          <p>Interactive sessions on mental well-being, mindfulness, and stress relief.</p>
         </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="section">
-        <div class="container">
-            <h2>What Our Community Says</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p>"Absoc Mental Health has given me a sense of belonging and helped me through tough times."</p>
-                    <span>- Aisha, Volunteer</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Their resources on mental health from an Islamic perspective were life-changing."</p>
-                    <span>- Muhammad, Community Member</span>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Finally, a platform that understands the cultural and religious challenges we face with mental health."</p>
-                    <span>- Fatima, Student</span>
-                </div>
-            </div>
+        <div class="service-card">
+          <h3>Peer Support</h3>
+          <p><span class="coming-soon">Coming Soon</span></p>
         </div>
-    </section>
-    <!-- Upcoming Events Section -->
-    <section id="events" class="section">
-        <div class="container">
-            <h2>Upcoming Events</h2>
-            <ul class="events-list">
-                <li>
-                    <strong>May 20, 2025:</strong> Community Workshop on Anxiety Management
-                </li>
-                <li>
-                    <strong>June 5, 2025:</strong> Virtual Peer Support Circle
-                </li>
-                <li>
-                    <strong>July 15, 2025:</strong> Mental Health & Faith Webinar
-                </li>
-            </ul>
+        <div class="service-card">
+          <h3>Resources</h3>
+          <p>Access Islamic and general mental health guides, articles, and videos.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Call-to-Action Banner -->
-    <section id="cta-banner" class="section">
-        <div class="container">
-            <h2>Join Us in Supporting Mental Health</h2>
-            <p>Become a volunteer, spread awareness, or contribute to our cause.</p>
-            <a href="donate.html" class="cta-button">Donate Now</a>
-            <a href="contact.html" class="cta-button-alt">Get Involved</a>
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section">
+    <div class="container">
+      <h2>What Our Community Says</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>"Absoc Mental Health has given me a sense of belonging and helped me through tough times."</p>
+          <span>- Aisha, Volunteer</span>
         </div>
-    </section>
-
-    <!-- Daily Mental Health Quote -->
-    <section id="quote" class="section">
-        <div class="container">
-            <h2>Daily Mental Health Quote</h2>
-            <blockquote id="quote-text">"Loading your daily inspiration..."</blockquote>
+        <div class="testimonial-card">
+          <p>"Their resources on mental health from an Islamic perspective were life-changing."</p>
+          <span>- Muhammad, Community Member</span>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Absoc Mental Health. All Rights Reserved.</p>
+        <div class="testimonial-card">
+          <p>"Finally, a platform that understands the cultural and religious challenges we face with mental health."</p>
+          <span>- Fatima, Student</span>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+  <!-- Upcoming Events Section -->
+  <section id="events" class="section">
+    <div class="container">
+      <h2>Upcoming Events</h2>
+      <ul class="events-list">
+        <li><strong>May 20, 2025:</strong> Community Workshop on Anxiety Management</li>
+        <li><strong>June 5, 2025:</strong> Virtual Peer Support Circle</li>
+        <li><strong>July 15, 2025:</strong> Mental Health & Faith Webinar</li>
+      </ul>
+    </div>
+  </section>
 
+  <!-- Instagram Feed Section -->
+<section id="instagram" class="section" style="text-align: center; padding-top: 3rem;">
+  <h2>📸 From Our Instagram</h2>
+  <p>Catch a glimpse of our latest events, stories and reflections from the AMH community.</p>
+  <div class="elfsight-app-a9fe328b-db39-4f97-90ae-5adbef3db4fd" data-elfsight-app-lazy></div>
+</section>
+
+<!-- Elfsight Instagram Feed Script -->
+<script src="https://static.elfsight.com/platform/platform.js" async></script>
+
+  <!-- Call-to-Action Banner -->
+  <section id="cta-banner" class="section">
+    <div class="container">
+      <h2>Join Us in Supporting Mental Health</h2>
+      <p>Become a volunteer, spread awareness, or contribute to our cause.</p>
+      <a href="donate.html" class="cta-button">Donate Now</a>
+      <a href="contact.html" class="cta-button-alt">Get Involved</a>
+    </div>
+  </section>
+
+  <!-- Carousel Gallery -->
+  <section id="carousel-gallery" class="section">
+    <div class="carousel-container">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="carousel-slide"><img src="Media/1.jpg" alt="Event 1"></div>
+        <div class="carousel-slide"><img src="Media/2.jpg" alt="Event 2"></div>
+        <div class="carousel-slide"><img src="Media/3.jpg" alt="Event 3"></div>
+        <div class="carousel-slide"><img src="Media/4.jpg" alt="Event 4"></div>
+        <div class="carousel-slide"><img src="Media/5.jpg" alt="Event 5"></div>
+        <div class="carousel-slide"><img src="Media/6.jpg" alt="Event 6"></div>
+        <div class="carousel-slide"><img src="Media/7.jpg" alt="Event 7"></div>
+        <div class="carousel-slide"><img src="Media/8.jpg" alt="Event 8"></div>
+        <div class="carousel-slide"><img src="Media/9.jpg" alt="Event 9"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Absoc Mental Health. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

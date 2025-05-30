@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [
     {
         "title": "5 Tips for Managing Anxiety",
@@ -50,56 +49,3 @@
         "author": "Dr. Hiba Farooq"
     }
 ]
-=======
-[
-    {
-        "title": "5 Tips for Managing Anxiety",
-        "description": "Learn practical strategies like mindfulness and grounding techniques to reduce anxiety and improve mental well-being.",
-        "link": "#",
-        "date": "2025-01-23",
-        "author": "AMH Team"
-    },
-    {
-        "title": "How to Support a Loved One",
-        "description": "Discover ways to be there for someone struggling with mental health challenges, including active listening and emotional support.",
-        "link": "#",
-        "date": "2025-01-20",
-        "author": "AMH Team"
-    },
-    {
-        "title": "The Benefits of Mindfulness",
-        "description": "Explore how mindfulness can enhance your daily life, reduce stress, and promote emotional regulation.",
-        "link": "#",
-        "date": "2025-01-18",
-        "author": "Dr. Sarah Khan"
-    },
-    {
-        "title": "How Social Media Impacts Mental Health",
-        "description": "Analyze the positive and negative impacts of social media on mental well-being and strategies to balance its usage.",
-        "link": "#",
-        "date": "2025-01-15",
-        "author": "AMH Research Team"
-    },
-    {
-        "title": "Understanding Burnout and How to Prevent It",
-        "description": "Learn about the causes of burnout, its symptoms, and actionable tips to prevent and recover from it.",
-        "link": "#",
-        "date": "2025-01-10",
-        "author": "Dr. Adeel Ahmed"
-    },
-    {
-        "title": "The Loneliness Epidemic: How to Cope",
-        "description": "Explore why loneliness is a growing concern and actionable steps to build social connections and combat isolation.",
-        "link": "#",
-        "date": "2025-01-05",
-        "author": "AMH Team"
-    },
-    {
-        "title": "Nature Therapy: The Healing Power of the Outdoors",
-        "description": "Understand how spending time in nature can reduce stress, improve mood, and boost overall mental health.",
-        "link": "#",
-        "date": "2025-01-01",
-        "author": "Dr. Hiba Farooq"
-    }
-]
->>>>>>> 86f3e3365bbfbe04cb47c563f5867df86fa0e17c
