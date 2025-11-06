@@ -1,63 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- =========================================================
+       META & PAGE INFORMATION
+       ---------------------------------------------------------
+       Defines the homepage for ABSoc Mental Health, ensuring
+       accessibility, responsiveness, and SEO compatibility.
+  ========================================================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home - ABSoc Mental Health</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
-  <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
-  <style>
-    /* Carousel Styles */
-    .carousel-container {
-      overflow: hidden;
-      width: 100%;
-      position: relative;
-    }
-    .carousel-track {
-      display: flex;
-      width: max-content;
-      animation: scrollCarousel 30s linear infinite;
-    }
-    .carousel-slide {
-      min-width: 300px;
-      margin-right: 1rem;
-    }
-    .carousel-slide img {
-      max-height: 200px;
-      width: auto;
-      border-radius: 10px;
-    }
-    @keyframes scrollCarousel {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-  </style>
+  <title>ABSoc Mental Health | Home</title>
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body>
-  <div id="daily-reminder-bar" style="background: #e0f7fa; color: #0d4a57; text-align: center; padding: 0.5rem 1rem; font-weight: bold; font-family: 'Inter', sans-serif; position: sticky; top: 0; z-index: 999;">
+
+  <!-- =========================================================
+       DAILY REMINDER BAR
+       ---------------------------------------------------------
+       Displays a motivational quote that updates daily.
+  ========================================================= -->
+  <div id="daily-reminder-bar" style="background:#e0f7fa; colour:#0d4a57; text-align:centre; padding:0.5rem 1rem; font-weight:bold; font-family:'Inter',sans-serif; position:sticky; top:0; z-index:999;">
     🌟 Daily Reminder: <span id="quote-bar-text">Loading...</span>
   </div>
+
   <script>
+    // Fetch a daily motivational quote from Quotable API
     fetch("https://api.quotable.io/random")
       .then(response => response.json())
       .then(data => {
-        document.getElementById("quote-bar-text").textContent = data.content + " — " + data.author;
+        document.getElementById("quote-bar-text").textContent = `"${data.content}" — ${data.author}`;
       })
       .catch(() => {
-        document.getElementById("quote-bar-text").textContent = "Take care of your mind. It's a part of your deen.";
+        document.getElementById("quote-bar-text").textContent = "Take care of your mind — it’s part of your deen.";
       });
   </script>
 
-  <!-- Navigation -->
+  <!-- =========================================================
+       NAVIGATION BAR
+       ---------------------------------------------------------
+       Stays at the top of the page. Includes key links to all
+       pages and social icons.
+  ========================================================= -->
   <nav class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo-link">
-        <img src="Media/AMH LOGO.png" alt="Absoc Mental Health Logo" class="nav-logo" />
+        <img src="Media/AMH LOGO.png" alt="ABSoc Mental Health Logo" class="nav-logo"/>
       </a>
       <ul class="nav-links">
         <li><a href="index.html" class="nav-item onpage">Home</a></li>
@@ -65,134 +59,332 @@
         <li><a href="donate.html" class="nav-item">Donate</a></li>
         <li><a href="blog.html" class="nav-item">Blog</a></li>
         <li><a href="contact.html" class="nav-item">Contact</a></li>
+        <!-- Instagram icon -->
         <li>
           <a href="https://www.instagram.com/absocmentalhealth/" target="_blank" class="nav-item" title="Instagram">
-            <i class="fab fa-instagram"></i>
+            <img src="Media/instagram-logo-black-transparent.png" alt="Instagram Logo" style="width:22px; vertical-align:middle;">
           </a>
         </li>
-        <li><a href="blogUpload.html" class="nav-item">Admin</a></li>
+       <li><a href="admin.html" class="nav-item">Admin</a></li>
       </ul>
     </div>
   </nav>
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h1>ABSoc Mental Health</h1>
-        <p>We are here to support your mental well-being, providing culturally-sensitive and religiously-sensitive based on Islamic teachings resources and peer support.</p>
-        <div class="hero-buttons">
-          <a href="donate.html" class="cta-button">Donate Now</a>
-          <a href="contact.html" class="cta-button-alt">Get Involved</a>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <!-- About Section -->
+<!-- =========================================================
+     HERO SECTION (Updated)
+     ---------------------------------------------------------
+     Prominently introduces ABSoc Mental Health with your new
+     description, clear call-to-action buttons, and cohesive
+     design for clarity and warmth.
+========================================================= -->
+<header class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>ABSoc Mental Health</h1>
+    <p>
+      We are here to support your mental well-being, providing culturally-sensitive
+      and religiously-sensitive resources and peer support, based on Islamic teachings.
+    </p>
+    <div class="hero-buttons">
+      <a href="donate.html" class="cta-button">Donate Now</a>
+      <a href="about.html" class="cta-button-alt">Get Involved</a>
+    </div>
+  </div>
+</header>
+
+
+  <!-- =========================================================
+       ABOUT / MISSION SECTION
+       ---------------------------------------------------------
+       Introduces what the organisation stands for and its
+       focus within the community.
+  ========================================================= -->
   <section id="about" class="section">
     <div class="container">
-      <h2>Who We Are</h2>
-      <p>ABSoc Mental Health is a youth-led initiative dedicated to empowering the Muslim community through culturally-sensitive and religiously-sensitive based on Islamic teachings mental health resources.</p>
+      <h2>Our Mission</h2>
+      <p>
+        ABSoc Mental Health is a youth-led initiative dedicated to supporting mental wellbeing in the Muslim community.
+        We focus on faith-based approaches, compassionate peer support, and education to create a space
+        where no one struggles alone.
+      </p>
     </div>
   </section>
 
-  <!-- Services Section -->
+  <!-- =========================================================
+       SERVICES SECTION
+       ---------------------------------------------------------
+       Highlights key offerings and areas of support.
+  ========================================================= -->
   <section id="services" class="section">
     <div class="container">
       <h2>What We Offer</h2>
       <div class="services-grid">
         <div class="service-card">
-          <h3>Workshops</h3>
-          <p>Interactive sessions on mental well-being, mindfulness, and stress relief.</p>
+          <h3>Workshops & Events</h3>
+          <p>Interactive sessions on mindfulness, resilience, and managing stress from an Islamic perspective.</p>
         </div>
         <div class="service-card">
           <h3>Peer Support</h3>
-          <p><span class="coming-soon">Coming Soon</span></p>
+          <p>Confidential one-to-one and group spaces for students and young people to share and connect.</p>
         </div>
         <div class="service-card">
-          <h3>Resources</h3>
-          <p>Access Islamic and general mental health guides, articles, and videos.</p>
+          <h3>Educational Content</h3>
+          <p>Articles, talks, and YouTube content exploring mental health through faith and psychology.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="section">
+  <!-- =========================================================
+       RESOURCES SECTION
+       ---------------------------------------------------------
+       Replaces “What the Community Says” with helpful links to
+       wellbeing organisations and AMH’s own platforms.
+  ========================================================= -->
+  <section id="resources" class="section">
     <div class="container">
-      <h2>What Our Community Says</h2>
-      <div class="testimonial-grid">
-        <div class="testimonial-card">
-          <p>"Absoc Mental Health has given me a sense of belonging and helped me through tough times."</p>
-          <span>- Aisha, Volunteer</span>
+      <h2>Helpful Resources</h2>
+      <p>If you or someone you know is struggling, please reach out. You are never alone.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Samaritans (UK)</h3>
+          <p>Free 24-hour listening service for anyone in distress.</p>
+          <a href="https://www.samaritans.org" target="_blank" class="cta-button">Visit Site</a>
         </div>
-        <div class="testimonial-card">
-          <p>"Their resources on mental health from an Islamic perspective were life-changing."</p>
-          <span>- Muhammad, Community Member</span>
+        <div class="service-card">
+          <h3>MIND Charity</h3>
+          <p>Advice and advocacy for anyone experiencing mental health challenges.</p>
+          <a href="https://www.mind.org.uk" target="_blank" class="cta-button-alt">Learn More</a>
         </div>
-        <div class="testimonial-card">
-          <p>"Finally, a platform that understands the cultural and religious challenges we face with mental health."</p>
-          <span>- Fatima, Student</span>
+        <div class="service-card">
+          <h3>ABSoc YouTube Channel</h3>
+          <p>Watch our faith-based mental health talks and reflections.</p>
+          <a href="https://www.youtube.com/@AbsocMentalHealth?app=desktop" target="_blank" class="cta-button">Watch Now</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Upcoming Events Section -->
-  <section id="events" class="section">
-    <div class="container">
-      <h2>Upcoming Events</h2>
-      <ul class="events-list">
-        <li><strong>Date to be announced:</strong> Coming Soon</li>
-      </ul>
-    </div>
-  </section>
+  <!-- =========================================================
+     CONNECT SECTION (Enhanced)
+     ---------------------------------------------------------
+     A vibrant, engaging section inviting users to join and
+     follow ABSoc Mental Health online.
+========================================================= -->
+<section id="connect" class="section" style="background: linear-gradient(135deg, #eaf5f8 0%, #fefdfb 100%); padding: 4rem 1rem;">
+  <div class="container" style="text-align: center;">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 2.4rem; color: #0d4a57; margin-bottom: 1rem;">
+      Connect With Us
+    </h2>
+    <p style="font-size: 1.1rem; color: #333; margin-bottom: 2rem; max-width: 650px; margin-left: auto; margin-right: auto;">
+      Be part of our growing community — join our spaces, follow our journey, and help spread awareness for faith-based mental wellbeing.
+    </p>
 
-  <!-- Instagram Feed Section -->
-<section id="instagram" class="section" style="text-align: center; padding-top: 3rem;">
-  <h2>📸 From Our Instagram</h2>
-  <p>Catch a glimpse of our latest events, stories and reflections from the AMH community.</p>
-  <div class="elfsight-app-a9fe328b-db39-4f97-90ae-5adbef3db4fd" data-elfsight-app-lazy></div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.2rem;">
+      <a href="https://www.instagram.com/absocmentalhealth/" target="_blank" class="connect-btn" style="
+        background-color: #f9cb80; color: #fff; padding: 14px 26px; border-radius: 40px;
+        font-weight: 600; font-size: 1rem; text-decoration: none; display: inline-flex;
+        align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      ">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+
+      <a href="https://www.youtube.com/@AbsocMentalHealth?app=desktop" target="_blank" class="connect-btn" style="
+        background-color: #ff5c5c; color: #fff; padding: 14px 26px; border-radius: 40px;
+        font-weight: 600; font-size: 1rem; text-decoration: none; display: inline-flex;
+        align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      ">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+
+      <a href="https://chat.whatsapp.com/JHkcSV3IxoG6nTxNjDwjl8?mode=wwt" target="_blank" class="connect-btn" style="
+        background-color: transparent; color: #0d4a57; padding: 14px 26px; border-radius: 40px;
+        border: 2px solid #0d4a57; font-weight: 600; font-size: 1rem; text-decoration: none;
+        display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease;
+      ">
+        <i class="fab fa-whatsapp"></i> WhatsApp Group
+      </a>
+
+      <a href="https://linktr.ee/absocmentalhealth_?utm_source=linktree_profile_share" target="_blank" class="connect-btn" style="
+        background-color: #ffffff; color: #1f7a1f; padding: 14px 26px; border-radius: 40px;
+        border: 2px solid #1f7a1f; font-weight: 600; font-size: 1rem; text-decoration: none;
+        display: inline-flex; align-items: center; gap: 10px; transition: all 0.3s ease;
+      ">
+        <i class="fas fa-leaf"></i> Linktree
+      </a>
+
+      <a href="mailto:absocmentalhealth1@gmail.com" class="connect-btn" style="
+        background-color: #7f9cf5; color: #fff; padding: 14px 26px; border-radius: 40px;
+        font-weight: 600; font-size: 1rem; text-decoration: none; display: inline-flex;
+        align-items: center; gap: 10px; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      ">
+        <i class="fas fa-envelope"></i> Email Us
+      </a>
+    </div>
+  </div>
+
+  <style>
+    /* Hover and animation effects */
+    .connect-btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      opacity: 0.95;
+    }
+  </style>
 </section>
 
-<!-- Elfsight Instagram Feed Script -->
-<script src="https://static.elfsight.com/platform/platform.js" async></script>
+<!-- =========================================================
+     IMAGE GALLERY (Restored and Refined)
+     ---------------------------------------------------------
+     Displays community photos in a horizontal carousel layout.
+     Uses smooth scrolling and mobile-friendly controls.
+========================================================= -->
+<section id="gallery" class="section" style="background:#f8fbfc; padding:3.5rem 0;">
+  <div class="container" style="position:relative;">
+    <h2 style="text-align:center; font-family:'Playfair Display', serif; colour:#0d4a57; margin-bottom:2rem;">
+      Our Community in Action
+    </h2>
 
-  <!-- Call-to-Action Banner -->
-  <section id="cta-banner" class="section">
-    <div class="container">
-      <h2>Join Us in Supporting Mental Health</h2>
-      <p>Become a volunteer, spread awareness, or contribute to our cause.</p>
-      <a href="donate.html" class="cta-button">Donate Now</a>
-      <a href="contact.html" class="cta-button-alt">Get Involved</a>
+    <!-- Scroll Buttons -->
+    <button class="gallery-btn left" onclick="scrollGallery(-350)">&#8249;</button>
+    <button class="gallery-btn right" onclick="scrollGallery(350)">&#8250;</button>
+
+    <!-- Image Track -->
+    <div class="gallery-track" id="gallery-track" style="
+      display:flex;
+      overflow-x:auto;
+      scroll-behaviour:smooth;
+      gap:1rem;
+      padding:0 3rem;
+    ">
+      <img src="Media/1.jpg" alt="Community Event" class="gallery-img">
+      <img src="Media/2.jpg" alt="Welfare Training Day" class="gallery-img">
+      <img src="Media/3.jpg" alt="Lecture Session" class="gallery-img">
+      <img src="Media/4.jpg" alt="Team Meeting" class="gallery-img">
+      <img src="Media/5.jpg" alt="Volunteer Work" class="gallery-img">
+      <img src="Media/6.jpg" alt="Hands On Heart Partnership" class="gallery-img">
+      <img src="Media/7.jpg" alt="Group Activity" class="gallery-img">
+      <img src="Media/8.jpg" alt="Workshop Activity" class="gallery-img">
+      <img src="Media/9.jpg" alt="Draw How You Feel Session" class="gallery-img">
     </div>
-  </section>
+  </div>
 
-  <!-- Carousel Gallery -->
-  <section id="carousel-gallery" class="section">
-    <div class="carousel-container">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="carousel-slide"><img src="Media/1.jpg" alt="Event 1"></div>
-        <div class="carousel-slide"><img src="Media/2.jpg" alt="Event 2"></div>
-        <div class="carousel-slide"><img src="Media/3.jpg" alt="Event 3"></div>
-        <div class="carousel-slide"><img src="Media/4.jpg" alt="Event 4"></div>
-        <div class="carousel-slide"><img src="Media/5.jpg" alt="Event 5"></div>
-        <div class="carousel-slide"><img src="Media/6.jpg" alt="Event 6"></div>
-        <div class="carousel-slide"><img src="Media/7.jpg" alt="Event 7"></div>
-        <div class="carousel-slide"><img src="Media/8.jpg" alt="Event 8"></div>
-        <div class="carousel-slide"><img src="Media/9.jpg" alt="Event 9"></div>
-      </div>
-    </div>
-  </section>
+  <style>
+    /* =========================================================
+       GALLERY STYLE
+       ---------------------------------------------------------
+       Polished layout, smooth auto-scroll and hover animation.
+    ========================================================= */
 
-  <!-- Footer -->
+    .gallery-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #0d4a57;
+      colour: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.6rem;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s ease;
+    }
+
+    .gallery-btn:hover {
+      background: #157a86;
+    }
+
+    .gallery-btn.left { left: 15px; }
+    .gallery-btn.right { right: 15px; }
+
+    /* Hide scrollbar for a clean, minimal look */
+    .gallery-track::-webkit-scrollbar { display: none; }
+    .gallery-track { -ms-overflow-style: none; scrollbar-width: none; }
+
+    .gallery-img {
+      flex-shrink: 0;
+      width: 330px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .gallery-img {
+        width: 260px;
+        height: 180px;
+      }
+      .gallery-btn { display: none; }
+    }
+  </style>
+
+  <script>
+    /* =========================================================
+       GALLERY SCRIPT
+       ---------------------------------------------------------
+       Controls button scroll, gentle auto-scroll, and hover pause.
+    ========================================================= */
+
+    const gallery = document.getElementById('gallery-track');
+    let scrollSpeed = 1; // pixels per frame
+    let autoScroll;
+
+    // Auto-scroll function
+    function startAutoScroll() {
+      autoScroll = setInterval(() => {
+        gallery.scrollLeft += scrollSpeed;
+        // Loop gallery continuously
+        if (gallery.scrollLeft + gallery.clientWidth >= gallery.scrollWidth) {
+          gallery.scrollLeft = 0;
+        }
+      }, 30); // lower = faster; 30ms is slow and smooth
+    }
+
+    // Stop scrolling on hover
+    function stopAutoScroll() {
+      clearInterval(autoScroll);
+    }
+
+    gallery.addEventListener('mouseenter', stopAutoScroll);
+    gallery.addEventListener('mouseleave', startAutoScroll);
+
+    // Manual scroll via arrows
+    function scrollGallery(distance) {
+      gallery.scrollBy({ left: distance, behaviour: 'smooth' });
+    }
+
+    // Start auto-scroll on page load
+    startAutoScroll();
+  </script>
+</section>
+
+  <!-- =========================================================
+       FOOTER
+       ---------------------------------------------------------
+       Copyright and final call-to-action links.
+  ========================================================= -->
   <footer>
     <div class="container">
-      <p>&copy; 2025 Absoc Mental Health. All Rights Reserved.</p>
+      <p>&copy; 2025 ABSoc Mental Health. All Rights Reserved.</p>
     </div>
   </footer>
 
-  <!-- JavaScript -->
+  <!-- =========================================================
+       SCRIPT LINK
+       ---------------------------------------------------------
+       Links to JavaScript for interactivity.
+  ========================================================= -->
   <script src="script.js"></script>
+
 </body>
 </html>

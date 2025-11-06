@@ -1,4 +1,9 @@
-/* General Styles */
+/* =========================================================
+   SECTION: GENERAL PAGE STYLES
+   These base styles apply to all pages on the website.
+   They control layout width, font, colors, and text readability.
+========================================================= */
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -16,6 +21,7 @@ body {
   font-size: 16px;
 }
 
+/* Headings used across the site for sections, About and Contact pages */
 .section h2,
 .contact-hero h1,
 .about-hero h1 {
@@ -25,6 +31,12 @@ body {
   font-size: 2.5rem;
   color: #0d4a57;
 }
+
+/* =========================================================
+   SECTION: HERO AREA (HOME PAGE TOP BANNER)
+   The main welcome banner at the top of the home page.
+   It uses a background gradient, center-aligned text, and overlay.
+========================================================= */
 
 .hero {
   position: relative;
@@ -40,6 +52,7 @@ body {
   overflow: hidden;
 }
 
+/* Adds a semi-transparent overlay to darken the background for better text contrast */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -50,6 +63,7 @@ body {
   z-index: 0;
 }
 
+/* Holds the hero’s text and buttons centered over the overlay */
 .hero-content {
   z-index: 1;
   max-width: 800px;
@@ -61,7 +75,7 @@ body {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
-
+/* Container for the two main call-to-action buttons (Donate & Get Involved) */
 .hero-buttons {
   display: flex;
   gap: 1rem;
@@ -69,18 +83,26 @@ body {
   flex-wrap: wrap;
 }
 
+/* Main Hero heading */
 .hero h1 {
   font-size: 3rem;
   font-family: 'Playfair Display', serif;
   margin-bottom: 1rem;
-  color: #ffffff; /* Explicit white fix */
+  color: #ffffff; /* Ensures white text */
 }
 
+/* Description paragraph below the main title */
 .hero p {
   font-size: 1.2rem;
   font-weight: 400;
   margin-bottom: 2rem;
 }
+
+/* =========================================================
+   SECTION: MOBILE RESPONSIVENESS (HERO)
+   Ensures hero area looks good on smaller devices.
+   Reduces text size and stacks buttons vertically.
+========================================================= */
 
 @media (max-width: 600px) {
   .hero h1 {
@@ -104,6 +126,7 @@ body {
     font-size: 1rem;
   }
 
+  /* Smaller text for team section members on mobile */
   .team-member h3 {
     font-size: 1.1rem;
   }
@@ -118,26 +141,38 @@ body {
     object-fit: cover;
   }
 }
+
+/* Ensures images always resize properly and don’t overflow their containers */
 img {
   max-width: 100%;
   height: auto;
 }
+
+/* Duplicate container setup used across other sections */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Navigation Bar */
+/* =========================================================
+   SECTION: NAVIGATION BAR
+   ---------------------------------------------------------
+   Styles the top site navigation, including the logo,
+   navigation links, and hamburger menu for mobile devices.
+   Keeps the navbar fixed to the top of the page.
+========================================================= */
+
 .navbar {
     background: #0d4a57;
     color: white;
     padding: 1.5rem 0;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* Ensures the navbar stays above everything else */
 }
 
+/* Container for the navigation content (logo + links) */
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -147,6 +182,7 @@ img {
     margin: 0 auto;
 }
 
+/* Horizontal list of navigation links */
 .nav-links {
     display: flex;
     gap: 2rem;
@@ -156,6 +192,7 @@ img {
     font-size: 1.2rem;
 }
 
+/* Basic link appearance (no underline, white color) */
 .nav-links a {
     text-decoration: none;
     color: white;
@@ -163,16 +200,19 @@ img {
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
+/* Adds hover effect (slight enlarge + lighter color) */
 .nav-links a:hover {
     color: #b6dd63;
     transform: scale(1.05);
 }
 
+/* Organization’s logo in navbar */
 .nav-logo {
     width: 120px;
     cursor: pointer;
 }
 
+/* Hamburger icon (three bars) for mobile view */
 .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -180,6 +220,7 @@ img {
     gap: 5px;
 }
 
+/* Individual lines of the hamburger icon */
 .hamburger-menu span {
     display: block;
     width: 30px;
@@ -187,7 +228,13 @@ img {
     background: white;
 }
 
-/* Instagram Icon */
+/* =========================================================
+   SECTION: SOCIAL ICON (INSTAGRAM / OTHER)
+   ---------------------------------------------------------
+   Styles for small social icons in the header or footer.
+   The hover enlarges the icon slightly for interactivity.
+========================================================= */
+
 .social-icon {
     display: flex;
     align-items: center;
@@ -197,10 +244,11 @@ img {
 .social-icon img {
     width: 30px;
     height: 30px;
-    filter: invert(1);
+    filter: invert(1); /* Ensures white icons on dark background */
     transition: transform 0.3s ease;
 }
 
+/* Slight enlargement when hovering over icon */
 .social-icon img:hover {
     transform: scale(1.2);
 }
@@ -211,7 +259,13 @@ img {
     font-size: 1.2rem;
 }
 
-/* Hero Section */
+/* =========================================================
+   SECTION: HERO (HOMEPAGE CONTENT)
+   ---------------------------------------------------------
+   Defines text, layout, and button placement for the hero
+   section that introduces the website.
+========================================================= */
+
 .hero {
   height: 100vh;
   background: linear-gradient(to right, #0d4a57, #12616d);
@@ -223,17 +277,27 @@ img {
   padding: 0 2rem;
 }
 
+/* Large main heading text in hero */
 .hero h1 {
   font-size: 3.5rem;
   margin-bottom: 1rem;
 }
 
+/* Supporting paragraph below heading */
 .hero p {
   font-size: 1.3rem;
   max-width: 700px;
   margin: 0 auto 2rem;
 }
 
+/* =========================================================
+   SECTION: CALL-TO-ACTION BUTTONS (HOMEPAGE)
+   ---------------------------------------------------------
+   Defines colors, shapes, and hover animations for the two
+   main hero buttons: Donate and Learn More.
+========================================================= */
+
+/* General shape and animation for both button styles */
 .cta-button, .cta-button-alt {
   padding: 12px 28px;
   font-weight: 600;
@@ -243,30 +307,39 @@ img {
   transition: all 0.3s ease;
 }
 
+/* --- Primary button: gold with white text --- */
 .cta-button {
   background-color: #d4a14d;
   color: white;
 }
 
+/* Darker gold on hover */
 .cta-button:hover {
   background-color: #bb8c3f;
 }
 
+/* --- Alternate button: transparent with gold border --- */
 .cta-button-alt {
   border: 2px solid #d4a14d;
   color: #d4a14d;
   background: transparent;
 }
 
+/* Fills gold and turns text white on hover */
 .cta-button-alt:hover {
   background-color: #d4a14d;
   color: white;
 }
 
+/* =========================================================
+   SECTION: GENERAL PAGE SECTIONS
+   ---------------------------------------------------------
+   Defines consistent spacing and typography for all
+   content “sections” (About, Services, Testimonials, etc.).
+========================================================= */
 
-/* Section */
 .section {
-    padding: 4rem 2rem;
+    padding: 4rem 2rem; /* Large padding for clean spacing */
 }
 
 .section h2 {
@@ -281,7 +354,14 @@ img {
     font-size: 1.2rem;
 }
 
-/* Services Section */
+/* =========================================================
+   SECTION: SERVICES GRID (WHAT WE OFFER)
+   ---------------------------------------------------------
+   Arranges service cards into a responsive grid layout.
+   Each card highlights a service such as workshops,
+   peer support, or resources.
+========================================================= */
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -289,6 +369,8 @@ img {
     margin-top: 2rem;
 }
 
+/* Shared card styling used for service cards, testimonials,
+   team members, and blog posts */
 .service-card, .testimonial-card, .team-member, .blog-post {
   border-radius: 12px;
   background: #fff;
@@ -297,6 +379,7 @@ img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Hover lift effect to make cards interactive */
 .service-card:hover,
 .team-member:hover,
 .blog-post:hover {
@@ -304,12 +387,13 @@ img {
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
 
-
+/* Additional shadow and movement for service cards */
 .service-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
+/* Card title and text formatting */
 .service-card h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
@@ -321,12 +405,19 @@ img {
     font-size: 1.1rem;
 }
 
-/* Quote Section */
+/* =========================================================
+   SECTION: QUOTE AREA / DAILY REMINDER
+   ---------------------------------------------------------
+   Used for inspirational or Islamic mental-health quotes.
+   Styled as a soft, centered section with light blue tones.
+========================================================= */
+
 #quote {
     background: #e8f7f9;
     padding: 4rem 2rem;
 }
 
+/* Styles for the text inside the quote area */
 #quote blockquote {
     font-size: 1.8rem;
     color: #2c3e50;
@@ -334,22 +425,36 @@ img {
     font-style: italic;
 }
 
-/* Donate Page Section */
+/* =========================================================
+   SECTION: DONATE PAGE LAYOUT
+   ---------------------------------------------------------
+   Centralized donate section used on the “Donate” page.
+   Ensures consistent formatting for donation text and links.
+========================================================= */
+
 .donate-section {
     text-align: center;
     padding: 4rem 2rem;
 }
 
+/* Spacing for the donation button area */
 .donate-button {
     margin: 2rem 0;
 }
 
+/* Iframes used for embedding donation widgets or JustGiving links */
 iframe {
     margin-top: 2rem;
     border: none;
 }
 
-/* Contact Page Hero */
+/* =========================================================
+   SECTION: CONTACT & ABOUT PAGE HERO
+   ---------------------------------------------------------
+   Banner area for the top of “Contact” and “About” pages.
+   Reuses dark blue gradient for consistency with the homepage.
+========================================================= */
+
 .contact-hero, .about-hero {
     height: 50vh;
     background: #0d4a57;
@@ -371,17 +476,25 @@ iframe {
     font-size: 1.5rem;
 }
 
-/* Form */
+/* =========================================================
+   SECTION: CONTACT FORM
+   ---------------------------------------------------------
+   Styles input fields, labels, and the submit button on
+   the Contact page’s “Get in touch” form.
+========================================================= */
+
 .contact-form-section form {
     max-width: 600px;
     margin: 0 auto;
     text-align: left;
 }
 
+/* Spacing between form elements */
 .form-group {
     margin-bottom: 1.5rem;
 }
 
+/* Labels above input fields */
 label {
     display: block;
     font-weight: 600;
@@ -389,6 +502,7 @@ label {
     color: #2c3e50;
 }
 
+/* Text input boxes and message textarea */
 input, textarea {
     width: 100%;
     padding: 1rem;
@@ -398,9 +512,10 @@ input, textarea {
 }
 
 textarea {
-    resize: none;
+    resize: none; /* Prevents resizing the message box */
 }
 
+/* Submit button styling */
 button.cta-button {
     display: inline-block;
     padding: 1rem 2.5rem;
@@ -413,11 +528,18 @@ button.cta-button {
     transition: background 0.3s ease;
 }
 
+/* Slightly darker hover shade for button */
 button.cta-button:hover {
     background: #09373f;
 }
 
-/* Footer */
+/* =========================================================
+   SECTION: FOOTER
+   ---------------------------------------------------------
+   Defines footer color, padding, and text alignment.
+   The footer remains simple and clean.
+========================================================= */
+
 footer {
     background: #0d4a57;
     color: white;
@@ -426,10 +548,17 @@ footer {
     font-size: 1.2rem;
 }
 
-/* Responsive Design */
+/* =========================================================
+   SECTION: RESPONSIVE DESIGN (NAVIGATION & LAYOUT)
+   ---------------------------------------------------------
+   Adjusts the navigation bar and layout for tablets and
+   smaller screens. The hamburger icon appears and the
+   menu collapses into a vertical layout.
+========================================================= */
+
 @media (max-width: 768px) {
     .hamburger-menu {
-        display: flex;
+        display: flex; /* show hamburger icon */
     }
 
     .nav-links {
@@ -440,18 +569,28 @@ footer {
         background: #0d4a57;
         width: 200px;
         padding: 1rem;
-        display: none;
+        display: none; /* hidden by default */
     }
 
+    /* When JS adds .open, the mobile menu slides down */
     .nav-links.open {
         display: flex;
     }
 
+    /* Larger link text on smaller screens for readability */
     .nav-links a {
         font-size: 1.4rem;
     }
 }
-/* Social Icon Styling */
+
+/* =========================================================
+   SECTION: SOCIAL ICON STYLING
+   ---------------------------------------------------------
+   Defines the circular background and hover animation for
+   social-media icons (Instagram, YouTube, etc.) found in
+   header or footer areas.
+========================================================= */
+
 .social-icon {
     display: flex;
     align-items: center;
@@ -467,10 +606,11 @@ footer {
 .social-icon img {
     width: 24px;
     height: 24px;
-    filter: invert(1);
+    filter: invert(1); /* keeps icons visible on dark background */
     transition: transform 0.3s ease;
 }
 
+/* Slight grow effect when hovering over the icon circle */
 .social-icon:hover {
     transform: scale(1.1);
     background: rgba(255, 255, 255, 0.4);
@@ -480,7 +620,13 @@ footer {
     transform: scale(1.2);
 }
 
-/* Default Navigation Link Styles */
+/* =========================================================
+   SECTION: DEFAULT NAVIGATION LINK STYLES
+   ---------------------------------------------------------
+   Sets up link color, hover states, and active-page
+   highlighting for the navigation menu.
+========================================================= */
+
 .nav-links a {
     text-decoration: none;
     color: white;
@@ -491,18 +637,24 @@ footer {
     border-radius: 5px;
 }
 
-/* Active Page Styling (Brand Orange Color) */
+/* Highlights the link of the current active page in brand gold */
 .nav-links a.onpage {
-    color: #D9A94B; /* Brand's orange color */
+    color: #D9A94B; /* Brand’s gold/orange color */
     font-weight: 700;
 }
 
-/* Hover Effect */
+/* Hover color change for all navigation links */
 .nav-links a:hover {
     color: #fffb00;
 }
 
-/* Daily Quote Section */
+/* =========================================================
+   SECTION: DAILY QUOTE / REMINDER STYLING
+   ---------------------------------------------------------
+   Styles the “Daily Reminder” or quote-of-the-day block.
+   Appears as a light section with centered inspirational text.
+========================================================= */
+
 #quote {
     background: #e8f7f9;
     padding: 4rem 2rem;
@@ -522,7 +674,14 @@ footer {
     font-style: italic;
     line-height: 1.5;
 }
-/* Blog Grid Layout */
+
+/* =========================================================
+   SECTION: BLOG GRID LAYOUT
+   ---------------------------------------------------------
+   Displays blog posts in responsive cards with shadows.
+   Used on the main Blog page and dynamic post lists.
+========================================================= */
+
 .blog-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -549,7 +708,12 @@ footer {
     margin-bottom: 15px;
 }
 
-/* CTA Button */
+/* =========================================================
+   SECTION: CALL-TO-ACTION BUTTONS (SITE-WIDE)
+   ---------------------------------------------------------
+   Shared button styles reused on all pages.
+========================================================= */
+
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
@@ -565,7 +729,13 @@ footer {
     background: #b68d40;
 }
 
-/* Team Section */
+/* =========================================================
+   SECTION: TEAM SECTION (MEET THE TEAM)
+   ---------------------------------------------------------
+   Formats the grid of team-member cards with photos,
+   names, and roles under “Meet the Team”.
+========================================================= */
+
 .section {
     padding: 4rem 2rem;
     text-align: center;
@@ -579,7 +749,7 @@ footer {
     font-weight: 700;
 }
 
-/* Team Grid */
+/* Team grid responsive layout */
 .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -589,7 +759,7 @@ footer {
     margin-top: 2rem;
 }
 
-/* Team Member Card */
+/* Individual team-member card appearance */
 .team-member {
     background: white;
     border-radius: 10px;
@@ -599,11 +769,13 @@ footer {
     text-align: center;
 }
 
+/* Lift effect on hover for interactivity */
 .team-member:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Team-member photo styling */
 .team-member img {
     width: 120px;
     height: 120px;
@@ -612,6 +784,7 @@ footer {
     object-fit: cover;
 }
 
+/* Member name and role text */
 .team-member h3 {
     font-size: 1.3rem;
     font-weight: 600;
@@ -623,7 +796,7 @@ footer {
     font-size: 1rem;
 }
 
-/* Responsive Design */
+/* Smaller cards and images on mobile */
 @media (max-width: 768px) {
     .team-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -634,7 +807,16 @@ footer {
         height: 100px;
     }
 }
-/* Sidebar Button */
+
+/* =========================================================
+   SECTION: VIDEO SIDEBAR (YOUTUBE SHORTCUT)
+   ---------------------------------------------------------
+   Floating button and slide-in panel that displays videos
+   from your YouTube channel. Appears fixed at the bottom
+   right of every page.
+========================================================= */
+
+/* Floating circular button that opens the video sidebar */
 #video-sidebar-btn {
     position: fixed;
     right: 20px;
@@ -654,15 +836,19 @@ footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
+/* Darker blue when hovering over the floating button */
 #video-sidebar-btn:hover {
     background: #0056b3;
 }
 
-/* Sidebar */
+/* ---------------------------------------------------------
+   Sidebar Container
+   Hidden off-screen by default, slides in when opened.
+--------------------------------------------------------- */
 #video-sidebar {
     position: fixed;
     top: 0;
-    right: -400px; /* Hide off-screen */
+    right: -400px; /* Starts hidden */
     width: 380px;
     height: 100%;
     background: #f8f9fa;
@@ -674,7 +860,7 @@ footer {
     z-index: 1000;
 }
 
-/* Sidebar Header */
+/* Sidebar heading (e.g., “Our YouTube Channel”) */
 #video-sidebar h2 {
     text-align: center;
     font-size: 1.5rem;
@@ -682,7 +868,7 @@ footer {
     margin-bottom: 10px;
 }
 
-/* Close Button */
+/* X-button used to close the sidebar */
 #close-sidebar {
     background: transparent;
     border: none;
@@ -696,11 +882,12 @@ footer {
     transition: color 0.3s;
 }
 
+/* Changes color of close icon when hovered */
 #close-sidebar:hover {
     color: #007BFF;
 }
 
-/* Video Styling */
+/* Grid layout inside the sidebar for YouTube video embeds */
 .video-grid {
     display: flex;
     flex-direction: column;
@@ -709,6 +896,7 @@ footer {
     padding-top: 10px;
 }
 
+/* Styling for the embedded iframes (videos) */
 .video-grid iframe {
     width: 100%;
     height: 220px;
@@ -716,7 +904,13 @@ footer {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Upcoming Events Styling */
+/* =========================================================
+   SECTION: UPCOMING EVENTS
+   ---------------------------------------------------------
+   Displays a clean list of events or announcements under
+   “Upcoming Events.” Each item appears in a card format.
+========================================================= */
+
 #events {
     background-color: #f9f9f9;
     padding: 60px 0;
@@ -728,6 +922,7 @@ footer {
     font-weight: 600;
 }
 
+/* Event list container */
 .events-list {
     list-style: none;
     padding-left: 0;
@@ -735,15 +930,22 @@ footer {
     margin: 0 auto;
 }
 
+/* Individual event cards */
 .events-list li {
     background: #ffffff;
     padding: 15px 20px;
     margin-bottom: 15px;
-    border-left: 5px solid #7f9cf5; /* subtle accent */
+    border-left: 5px solid #7f9cf5; /* Soft accent line */
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-
+/* =========================================================
+   SECTION: USER BLOG / DYNAMIC POSTS
+   ---------------------------------------------------------
+   Used for posts generated via blogUpload.html (admin side).
+   Matches main blog style but with extra emphasis for
+   community-submitted content.
+========================================================= */
 
 .blog-post {
     margin-bottom: 40px;
@@ -771,6 +973,7 @@ footer {
     line-height: 1.6;
 }
 
+/* “Read More” button in each blog post */
 .blog-post button {
     margin-top: 10px;
     padding: 8px 14px;
@@ -786,11 +989,13 @@ footer {
     background-color: #5b7de0;
 }
 
+/* Wrapper background for blog section */
 #user-blog {
     background: #f4f7fb;
     padding: 60px 0;
 }
 
+/* Blog section heading */
 #user-blog h2 {
     text-align: center;
     font-size: 2rem;
@@ -798,52 +1003,60 @@ footer {
     color: #333;
 }
 
-
+/* =========================================================
+   SECTION: SECONDARY NAVBAR STYLING (BLOG PAGES)
+   ---------------------------------------------------------
+   Adjusted color tones for navbar inside blog sections.
+========================================================= */
 
 .navbar {
     background-color: #0e4a56;
     padding: 20px 0;
-  }
-  
-  .nav-links {
+}
+
+.nav-links {
     list-style: none;
     display: flex;
     gap: 24px;
     align-items: center;
     margin: 0;
     padding: 0;
-  }
-  
-  .nav-item {
+}
+
+.nav-item {
     color: white;
     font-weight: 600;
     text-decoration: none;
     transition: color 0.2s ease;
-  }
-  
-  .nav-item:hover {
+}
+
+.nav-item:hover {
     color: #f9cb80;
-  }
-  
-  .nav-item.onpage {
+}
+
+.nav-item.onpage {
     color: #f9cb80;
-  }
-  
-  /* Font Awesome icon inside nav */
-  .nav-item i {
+}
+
+/* Font Awesome icon sizing inside navigation */
+.nav-item i {
     color: white;
     font-size: 18px;
     vertical-align: middle;
     transition: opacity 0.2s ease;
-  }
-  
-  .nav-item i:hover {
+}
+
+.nav-item i:hover {
     opacity: 0.7;
-  }
-  
+}
 
+/* =========================================================
+   SECTION: BLOG BACKGROUND (USER BLOG PAGE)
+   ---------------------------------------------------------
+   Adds gradient borders and structure to the user blog area.
+========================================================= */
 
-  #user-blog {
+#user-blog {
     background: linear-gradient(to bottom, #e0f7fa, #f0faff);
     padding: 80px 0;
     border-top: 6px solid #7f9cf5;
@@ -866,6 +1079,13 @@ footer {
     font-size: 1rem;
     font-weight: 400;
 }
+
+/* =========================================================
+   SECTION: DYNAMIC BLOG POSTS
+   ---------------------------------------------------------
+   Handles styles for posts pulled in dynamically via JS
+   from blogData.json / blogPosts.json.
+========================================================= */
 
 #dynamic-posts .blog-post {
     background: white;
@@ -902,6 +1122,13 @@ footer {
     font-size: 1rem;
     line-height: 1.6;
 }
+/* =========================================================
+   SECTION: CALL-TO-ACTION (REUSABLE BUTTONS)
+   ---------------------------------------------------------
+   Common button classes reused across the site
+   for “Donate Now”, “Learn More”, “Get Involved”, etc.
+   Maintains consistent brand color and hover feedback.
+========================================================= */
 
 .cta-button {
     display: inline-block;
@@ -913,14 +1140,15 @@ footer {
     text-decoration: none;
     border-radius: 8px;
     transition: background-color 0.2s ease, transform 0.15s ease;
-  }
-  
-  .cta-button:hover {
+}
+
+.cta-button:hover {
     background-color: #bb8d3f;
     transform: translateY(-2px);
-  }
-  
-  .cta-button-alt {
+}
+
+/* Outline-style alternate CTA button (transparent background) */
+.cta-button-alt {
     display: inline-block;
     color: #d4a14d;
     padding: 12px 24px;
@@ -930,182 +1158,349 @@ footer {
     border: 2px solid #d4a14d;
     border-radius: 8px;
     transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
-  }
-  
-  .cta-button-alt:hover {
-    background-color: #d4a14d;
-    color: white;
-    transform: translateY(-2px);
-  }
-.scroll-gallery {
-  background-color: #e6f7f9;
-  padding: 20px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.gallery-controls {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-.gallery-container {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 0 20px;
-  scrollbar-width: none;
-}
-
-.gallery-container::-webkit-scrollbar {
-  display: none;
-}
-
-.gallery-container img {
-  height: 120px;
-  border-radius: 10px;
-  object-fit: cover;
-  flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-.gallery-container img:hover {
-  transform: scale(1.05);
-}
-
-.scroll-btn {
-  background-color: #0b4a52;
-  color: white;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  z-index: 1;
-  transition: background-color 0.3s ease;
-}
-
-.scroll-btn:hover {
-  background-color: #097179;
-}
-
-.left-btn {
-  margin-left: 10px;
-}
-
-.right-btn {
-  margin-right: 10px;
-}
-
-.gallery-item {
-  flex-shrink: 0;
-  width: 200px;
-  text-align: center;
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.gallery-item p {
-  margin-top: 10px;
-  font-size: 1rem;
-  color: #0d4a57;
-  font-weight: 500;
-}
-
-.scroll-btn {
-  align-self: center;
-  background-color: #0b4a52;
-  color: white;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 10px;
-  border-radius: 50%;
-  height: 48px;
-  width: 48px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero + .scroll-gallery {
-  margin-top: -50px;
-}
-
-.scroll-gallery {
-  margin-bottom: 60px;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.blog-post {
-  background: white;
-  border-left: 5px solid #0d4a57;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease;
-}
-
-.blog-post:hover {
-  transform: translateY(-5px);
-}
-
-.blog-post h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #0d4a57;
-}
-
-.blog-post p {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 0.75rem;
-}
-
-.cta-button {
-  background: #d4a14d;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 5px;
-  font-weight: bold;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.cta-button:hover {
-  background: #bb8c3f;
-}
-
-.cta-button-alt {
-  display: inline-block;
-  color: #d4a14d;
-  background: rgba(255, 255, 255, 0.08); /* light tint for dark backgrounds */
-  padding: 12px 24px;
-  margin: 8px 8px 0 0;
-  font-weight: 600;
-  text-decoration: none;
-  border: 2px solid #d4a14d;
-  border-radius: 8px;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
 .cta-button-alt:hover {
-  background-color: #d4a14d;
-  color: white;
-  transform: translateY(-2px);
+    background-color: #d4a14d;
+    color: white;
+    transform: translateY(-2px);
 }
 
+/* =========================================================
+   SECTION: SCROLLING IMAGE GALLERY
+   ---------------------------------------------------------
+   Horizontal, scrollable gallery used to showcase events,
+   team photos, or Instagram-style highlights.
+========================================================= */
+
+/* Container background + padding for gallery row */
+.scroll-gallery {
+    background-color: #e6f7f9;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Parent wrapper containing images and scroll buttons */
+.gallery-controls {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Horizontal scrolling behavior */
+.gallery-container {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0 20px;
+    scrollbar-width: none; /* hides scrollbar in Firefox */
+}
+
+/* Hide scrollbar in WebKit browsers */
+.gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Image appearance within gallery */
+.gallery-container img {
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+}
+
+/* Scroll buttons on each side of the gallery */
+.scroll-btn {
+    background-color: #0b4a52;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background-color: #097179;
+}
+
+/* Left / right positioning tweaks */
+.left-btn { margin-left: 10px; }
+.right-btn { margin-right: 10px; }
+
+/* Each image item block with optional caption */
+.gallery-item {
+    flex-shrink: 0;
+    width: 200px;
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #0d4a57;
+    font-weight: 500;
+}
+
+/* Shared scroll-button sizing/alignment */
+.scroll-btn {
+    align-self: center;
+    background-color: #0b4a52;
+    color: white;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slight negative margin so gallery overlaps hero visually */
+.hero + .scroll-gallery {
+    margin-top: -50px;
+}
+
+/* Extra bottom spacing to separate gallery from next section */
+.scroll-gallery {
+    margin-bottom: 60px;
+}
+
+/* =========================================================
+   SECTION: BLOG CARD (GENERAL USE)
+   ---------------------------------------------------------
+   Reaffirmed card style to maintain brand colors across
+   all blog, event, and content tiles.
+========================================================= */
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.blog-post {
+    background: white;
+    border-left: 5px solid #0d4a57;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+}
+
+.blog-post h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #0d4a57;
+}
+
+.blog-post p {
+    font-size: 1rem;
+    color: #444;
+    margin-bottom: 0.75rem;
+}
+
+/* Consistent CTA styling inside blog posts */
+.cta-button {
+    background: #d4a14d;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background: #bb8c3f;
+}
+
+/* Alternate transparent CTA for dark backgrounds */
+.cta-button-alt {
+    display: inline-block;
+    color: #d4a14d;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 12px 24px;
+    margin: 8px 8px 0 0;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid #d4a14d;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.cta-button-alt:hover {
+    background-color: #d4a14d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ===============================
+   ABSoc Mental Health Colour Theme
+   =============================== */
+:root {
+  --amh-teal: #0d4a57;
+  --amh-gold: #b6862c;
+  --amh-cream: #f5f2eb;
+  --amh-dark: #333333;
+}
+
+/* ===============================
+   General Page Styling
+   =============================== */
+body {
+  background-color: var(--amh-cream);
+  color: var(--amh-dark);
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===============================
+   Navbar
+   =============================== */
+.navbar {
+  background-color: var(--amh-teal);
+  color: white;
+  padding: 0.7rem 0;
+}
+
+.nav-item {
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: var(--amh-gold);
+}
+
+/* ===============================
+   Buttons
+   =============================== */
+.cta-button,
+button,
+.download-btn {
+  background-color: var(--amh-gold);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover,
+button:hover,
+.download-btn:hover {
+  background-color: var(--amh-teal);
+}
+
+/* ===============================
+   Admin Portal Styling
+   =============================== */
+.admin-container {
+  background-color: white;
+  border: 2px solid var(--amh-gold);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+}
+
+.admin-container h1 {
+  color: var(--amh-teal);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.admin-container h2 {
+  color: var(--amh-gold);
+  margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--amh-gold);
+  display: inline-block;
+}
+
+.section-block {
+  border-top: 2px solid var(--amh-teal);
+  padding-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 0.3rem;
+  font-size: 1rem;
+}
+
+.preview img {
+  border-radius: 8px;
+  border: 2px solid var(--amh-gold);
+}
+
+.success {
+  color: var(--amh-teal);
+  font-weight: 600;
+}
+
+.error {
+  color: #b82b2b;
+  font-weight: 600;
+}
+
+/* ===============================
+   Footer
+   =============================== */
+footer {
+  background-color: var(--amh-teal);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--amh-gold);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
